@@ -13,7 +13,7 @@ export default function DetailLink() {
     return (
         <button
             onClick={() => {
-                router.back();
+                // router.back();
             }}
         >
             버튼
