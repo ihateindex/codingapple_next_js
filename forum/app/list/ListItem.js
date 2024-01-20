@@ -24,15 +24,20 @@ export default function ListItem({ result }) {
                                             return response.json();
                                         } else {
                                             // 서버 요청 실패시
+                                            console.log(response);
+                                            console.log('서버 요청 실패');
                                         }
                                     })
                                     .then((response) => {
                                         // 서버 요청 성공시
                                         // console.log(response);
-                                        event.target.parentElement.style.opacity = 0;
-                                        setTimeout(() => {
-                                            event.target.parentElement.style.display = 'none';
-                                        }, 1000);
+                                        if (response) {
+                                            console.log('서버 요청 성공');
+                                            event.target.parentElement.style.opacity = 0;
+                                            setTimeout(() => {
+                                                event.target.parentElement.style.display = 'none';
+                                            }, 1000);
+                                        }
                                     })
                                     .catch((error) => {
                                         // fetch 에러시, 인터넷 문제등..

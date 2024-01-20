@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import './globals.css';
-import LoginButton from './loginButton';
+import LoginButton from './LoginButton';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import LogoutButton from './LoginoutButton';
