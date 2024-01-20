@@ -11,6 +11,9 @@ body {
     text-decoration: none;
     color: black;
 }
+.navbar span {
+    margin-right: 10px;
+}
 .logo {
     font-weight: bold;
 }
