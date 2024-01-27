@@ -22,7 +22,12 @@ export default async function handler(요청, 응답) {
             const db = client.db('forum');
             let result = await db.collection('comment').insertOne(body);
             console.log(`댓글이 작성되었습니다. _id: ${result.insertedId}`);
-            return 응답.status(200);
+
+            let commentList = await db
+                .collection('comment')
+                .find({ parent: ObjectId(body.parent) })
+                .toArray();
+            return 응답.status(200).json(commentList);
         } catch (error) {}
     }
 }
