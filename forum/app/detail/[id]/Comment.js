@@ -27,6 +27,8 @@ export default function Comment(props) {
             });
     }, []);
 
+    console.log(commentList.length > 0);
+
     return (
         <div>
             <hr></hr>
@@ -34,7 +36,7 @@ export default function Comment(props) {
                 ? commentList.map((value, index) => {
                       return <p key={index}>{value.content}</p>;
                   })
-                : '로딩중'}
+                : '댓글이 없습니다.'}
             <input
                 type="text"
                 value={comment}

@@ -57,3 +57,7 @@ button {
     border: none;
     border-radius: 5px;
 }
+
+img {
+    width: 100%;
+}

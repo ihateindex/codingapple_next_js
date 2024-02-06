@@ -21,7 +21,7 @@ export default async function handler(요청, 응답) {
             const db = client.db('forum');
             let result = await db.collection('post').insertOne(요청.body);
             console.log(`포스트가 삽입되었습니다. _id: ${result.insertedId}`);
-            return 응답.status(200).redirect('/list');
+            return 응답.redirect(302, '/list');
         } catch (error) {
             console.error(error);
         }

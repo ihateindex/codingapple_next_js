@@ -15,7 +15,7 @@ export default async function handler(요청, 응답) {
             const db = client.db('forum');
             let result = await db.collection('post').updateOne({ _id: new ObjectId(요청.body._id) }, { $set: { title: 요청.body.title, content: 요청.body.content } });
             console.log(`포스트가 수정되었습니다. ${result}`);
-            return 응답.status(200).redirect('/list');
+            return 응답.redirect(302, '/list');
         } catch (error) {
             console.error(error);
         }
