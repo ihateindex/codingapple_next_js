@@ -61,3 +61,12 @@ button {
 img {
     width: 100%;
 }
+
+.dark-mode .navbar {
+    background: #222;
+}
+
+.dark-mode .navbar a,
+.dark-mode .navbar span {
+    color: white;
+}

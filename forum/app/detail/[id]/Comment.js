@@ -27,8 +27,6 @@ export default function Comment(props) {
             });
     }, []);
 
-    console.log(commentList.length > 0);
-
     return (
         <div>
             <hr></hr>
