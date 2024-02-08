@@ -15,8 +15,8 @@ export async function middleware(request) {
 
     // * 1. /list 페이지 접속기록 저장하기
     if (request.nextUrl.pathname.startsWith('/list')) {
-        console.log(new Date());
-        console.log(request.headers.get('sec-ch-ua-platform'));
+        // console.log(new Date());
+        // console.log(request.headers.get('sec-ch-ua-platform'));
         return NextResponse.next(); // 통과
     }
 
@@ -24,7 +24,7 @@ export async function middleware(request) {
     // * Next Auth를 사용하고 JWT 방식으로 사용해야 유저 정보 쉽게 출력이 가능, env파일에 NEXTAUTH_SECRET={JWT 만들때 작성한 secret key} 작성
     if (request.nextUrl.pathname.startsWith('/write')) {
         const session = await getToken({ req: request });
-        console.log(session);
+        // console.log(session);
         // * 미로그인시 session이 null
         if (session == null) {
             // * 미로그인시 로그인 페이지로 redirect하는데 자바스크립트의 new URL() 인스턴스 사용, 첫번째 파라미터는 이동할 url, 두번째 파라미터는 베이스 url
